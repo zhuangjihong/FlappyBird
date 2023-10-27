@@ -111,6 +111,8 @@ def game_window():
                 if event.key == pygame.K_SPACE:
                     flap = True
                     AUDID['flap'].play()
+                if event.key == pygame.K_r:
+                    main()
 
         floor_x -= 4
         if floor_x <= - floor_gap:
