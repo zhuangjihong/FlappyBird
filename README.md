@@ -8,6 +8,7 @@ python -m pygame --version
 ```
 ## How to play
 - Space Start playing and jumping.
+- R Return to the main interface
 ## Custom skin
 ### background
 The default skin for the game background is random. To customize it, change the code on line 31 of "Flappy Bird. py" to the following one, with 'xxx' being 'day' or 'night'.
@@ -24,3 +25,8 @@ The default skin of the game's pillars is random. To customize it, change the co
 ```
 pipe = IMAGES['xxx']
 ```
+## Version
+### v1.0.1
+Added the function of returning to the main interface.
+### v1.0.0
+Ordinary gaming features.
