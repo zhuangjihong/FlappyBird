@@ -171,7 +171,7 @@ def end_window(result):
             for event in pygame.event.get():
                 if event.type == pygame.QUIT:
                     quit()
-                if event.type == pygame.KEYDOWN and event.key == pygame.K_SPACE:
+                if event.type == pygame.KEYDOWN and event.key == pygame.K_r:
                     return
 
         SCREEN.blit(IMAGES['bgpic'], (0, 0))
