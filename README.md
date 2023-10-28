@@ -7,7 +7,7 @@ If you have Python installed on your computer, simply run '**pip install pygame*
 python -m pygame --version
 ```
 ## How to play
-- Space Start playing and jumping.
+- Space jumping.
 - R Return to the main interface.
 ## Custom skin
 ### background
@@ -26,6 +26,8 @@ The default skin of the game's pillars is random. To customize it, change the co
 pipe = IMAGES['xxx']
 ```
 ## Version
+### v1.0.2
+Added start button.
 ### v1.0.1
 Added the function of returning to the main interface.
 ### v1.0.0
