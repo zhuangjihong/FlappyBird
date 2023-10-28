@@ -7,6 +7,8 @@ FPS = 30
 pygame.init()
 SCREEN = pygame.display.set_mode((W,H))
 pygame.display.set_caption("Flappy Bird")
+icon = pygame.image.load('assets/sprites/red-up.png')
+pygame.display.set_icon(icon)
 ClOCK = pygame.time.Clock()
 
 IMAGES = {}
