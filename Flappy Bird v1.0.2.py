@@ -28,6 +28,12 @@ for audio in os.listdir('assets/audio'):
     path = os.path.join('assets/audio',audio)
     AUDID[name] = pygame.mixer.Sound(path)
 
+def is_rect(pos,rect):
+    x,y=pos
+    rx,ry,rw,rh=rect
+    if (rx <= x <=rx+rw)and(ry <= y <= ry +rh): 
+        return True
+    return False
 
 def main():
     while True:
@@ -37,8 +43,6 @@ def main():
         IMAGES['birds'] = [IMAGES[color+'-up'], IMAGES[color+'-mid'], IMAGES[color+'-down']]
         pipe = IMAGES[random.choice(['green-pipe', 'red-pipe'])]
         IMAGES['pipes'] = [pipe, pygame.transform.flip(pipe, False, True)]
-        IMAGES['st'] = IMAGES['start']
-        IMAGES['st'] = pygame.transform.scale(IMAGES['st'], (100, 50))
         menu_window()
         resulf = game_window()
         end_window(resulf)
@@ -57,6 +61,9 @@ def menu_window():
     bird_y_vel = 1
     bird_y_range = [bird_y - 8, bird_y + 8]
 
+    start = IMAGES['start']
+    start = pygame.transform.scale(start, (100, 50))
+
     start_x = 90
     start_y = 300
 
@@ -69,7 +76,9 @@ def menu_window():
             if event.type == pygame.QUIT:
                 quit()
             if event.type == pygame.MOUSEBUTTONDOWN:
-                return
+                w,h=start.get_size()
+                if is_rect(event.pos,(start_x,start_y,w,h)):
+                    return
                 
 
         floor_x -= 4
@@ -87,7 +96,7 @@ def menu_window():
         SCREEN.blit(IMAGES['floor'], (floor_x, FLOOR_Y))
         SCREEN.blit(IMAGES['guide'], (guide_x, guide_y))
         SCREEN.blit(IMAGES['birds'][frames[idx]], (bird_x, bird_y))
-        SCREEN.blit(IMAGES['st'], (start_x, start_y))
+        SCREEN.blit(start, (start_x, start_y))
         pygame.display.update()
         ClOCK.tick(FPS)
 
