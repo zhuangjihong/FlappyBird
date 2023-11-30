@@ -1,5 +1,4 @@
 # FlappyBird
-Please give me a star, thank you.
 ## Download
 Click on "code", click on "Download ZIP", download the compressed package, unzip it to any location, open "Flappy Bird. py" inside, and you can run the program. Since this is done by Pygame, you need to download Pygame first.
 
