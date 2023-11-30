@@ -67,6 +67,12 @@ def menu_window():
     start_x = 90
     start_y = 300
 
+    setting = IMAGES['setting']
+    setting = pygame.transform.scale(setting, (40,40))
+
+    setting_x = 240
+    setting_y = 0
+
     idx = 0
     repeat = 5
     frames = [0] * repeat + [1] * repeat + [2] * repeat + [1] * repeat
@@ -78,6 +84,9 @@ def menu_window():
             if event.type == pygame.MOUSEBUTTONDOWN:
                 w,h=start.get_size()
                 if is_rect(event.pos,(start_x,start_y,w,h)):
+                    return
+                elif is_rect(event.pos,(setting_x,setting_y,w,h)):
+                    settings()
                     return
                 
 
@@ -97,9 +106,12 @@ def menu_window():
         SCREEN.blit(IMAGES['guide'], (guide_x, guide_y))
         SCREEN.blit(IMAGES['birds'][frames[idx]], (bird_x, bird_y))
         SCREEN.blit(start, (start_x, start_y))
+        SCREEN.blit(setting, (setting_x, setting_y))
         pygame.display.update()
         ClOCK.tick(FPS)
 
+def settings():
+    
 
 def game_window():
 
